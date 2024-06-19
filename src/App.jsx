@@ -5,7 +5,7 @@ import ProjectSidebar from "./components/ProjectSidebar";
 
 function App() {
   const [projectsState, setProjectsState] = useState({
-    selectedProject: undefined,
+    selectedProjectID: undefined,
     projects: {},
   });
   function handleStartAddProject() {
@@ -17,9 +17,9 @@ function App() {
     });
   }
   let content;
-  if (projectsState.selectedProject === null) {
+  if (projectsState.selectedProjectID === null) {
     content = <NewProject />;
-  } else if (projectsState.selectedProject === undefined) {
+  } else if (projectsState.selectedProjectID === undefined) {
     content = <NoProjectSelected onStartAddProject={handleStartAddProject} />;
   }
 
